@@ -1,0 +1,50 @@
+@import '../node_modules/modern-normalize/modern-normalize.css';
+
+@font-face {
+  font-family: 'JetBrains Mono Variable', monospace;
+  src: local('JetBrains Mono Variable'), url('./assets/fonts/static/JetBrainsMono-VariableFont_wght.ttf') format('truetype');
+}
+
+body {
+  background-color: var(--black);
+}
+
+input, button {
+  font-family: inherit;
+}
+
+:root {
+  /*font-family: 'JetBrains Mono Bold', sans-serif;*/
+  font-family: 'JetBrains Mono Variable', monospace;
+  font-weight: 400;
+
+  --dark-grey: rgb(36, 35, 44);
+  --grey: rgb(128, 124, 146);
+  --white: rgb(230, 229, 234);
+  --black: rgb(24, 23, 31);
+  --lime-green: rgb(164, 255, 175);
+  --red: rgb(246, 74, 74);
+  --orange: rgb(251, 124, 88);
+  --yellow: rgb(248, 205, 101);
+
+  color-scheme: light dark;
+  /*color: rgba(255, 255, 255, 0.87);*/
+  /*background-color: var(--black);*/
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}

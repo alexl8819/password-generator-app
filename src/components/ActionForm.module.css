@@ -1,0 +1,37 @@
+.generation-form {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--dark-grey);
+  padding: 15px;
+}
+
+.generation-form__submit {
+  text-align: center;
+  color: var(--black);
+  background-color: var(--lime-green);
+  border: 1px solid transparent;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin: 10px;
+  padding: 15px;
+}
+
+.generation-form__submit:disabled {
+  cursor: not-allowed;
+}
+
+.generation-form__submit:not(:disabled):hover {
+  cursor: pointer;
+  border: 1px solid var(--lime-green);
+  background-color: transparent;
+  color: var(--lime-green);
+}
+
+.generation-form__submit-svg {
+  margin-left: 10px;
+}
+
+.generation-form__submit:not(:disabled):hover .generation-form__submit-svg {
+  filter: invert(88%) sepia(20%) saturate(836%) hue-rotate(65deg) brightness(108%) contrast(101%);
+}

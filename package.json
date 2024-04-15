@@ -6,7 +6,7 @@
   "browserslist": "last 2 versions",
   "scripts": {
     "dev": "vite --host",
-    "build": "vite build",
+    "build": "vite build --base=/password-generator-app/",
     "lint:js": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "lint:css": "stylelint src/**/*.css",
     "test": "jest --no-cache",

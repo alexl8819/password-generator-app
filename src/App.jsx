@@ -47,7 +47,7 @@ function App() {
   const formOptions = Object.freeze({
     charLength: {
       label: 'Character Length',
-      name: 'charlengh',
+      name: 'charlength',
       min: 6,
       max: 20,
       currentValue: charLength,

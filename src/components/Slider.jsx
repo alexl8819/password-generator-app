@@ -16,8 +16,9 @@ export default function Slider ({ label, name, min, max, value, onChange }) {
   return (
     <div className={styles.slider}>
       <input type="range" ref={rangeRef} className={styles.sliderInput} name={name} min={min} max={max} value={value} step="1" onInput={onValueChange} />
+      <label htmlFor={name} className={styles.sliderLabelHidden}>{ label }</label>
       <div className={styles.sliderCharlengthLabel}>
-        <label htmlFor={name} className={styles.sliderLabel}>{ label }</label>
+        <p className={styles.sliderLabel}>{ label }</p>
         <p className={styles.sliderCharlengthValue}>{ value }</p>
       </div>
     </div>

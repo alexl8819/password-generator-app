@@ -9,6 +9,7 @@ const cx = classnames.bind(styles);
 
 export default function PasswordBar ({ passwordCopy, onCopy }) {
   const [hasCopied, setHasCopied] = useState(false);
+  // TODO: Effect should be pure CSS solution
   const handleCopy = (e) => {
     e.preventDefault();
     if (!hasCopied) {
@@ -20,7 +21,8 @@ export default function PasswordBar ({ passwordCopy, onCopy }) {
   
   return (
     <div className={styles.passwordBar}>
-      <input type="text" value={passwordCopy} className={styles.passwordBarInput} placeholder="P4$5W0rD!" readOnly />
+      <input type="text" id="password" name="password" value={passwordCopy} className={styles.passwordBarInput} placeholder="P4$5W0rD!" readOnly />
+      <label htmlFor="password" className={styles.passwordBarLabelHidden}>Password</label>
       <button className={cx({ passwordBarButton: true, passwordBarButtonActivated: hasCopied })} onClick={handleCopy} disabled={!passwordCopy || !passwordCopy.length} aria-label='copy'>
         <img src={copyBtn} className={styles.passwordBarButtonCopyimg} alt="copy icon" />
       </button>

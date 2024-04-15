@@ -24,8 +24,6 @@
   font-weight: 700;
 }
 
-/* note: https://codepen.io/ShadowShahriar/pen/zYPPYrQ */
-
 .slider__input {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -43,7 +41,7 @@
 
 .slider__input::-webkit-slider-runnable-track {
   -webkit-appearance: none;
-  background: linear-gradient(var(--lime-green) 0 0) scroll no-repeat center / 100% 8px;
+  background: transparent;
   height: 8px;
 }
 
@@ -78,8 +76,6 @@
   -webkit-appearance: none;
   appearance: none;
   border-radius: 999px;
-  /*background-color: currentColor;
-  box-shadow: calc(-100vmax - var(0.5em, 1.125em)) 0 0 100vmax currentColor;*/
   margin-top: -5px;
   background-color: var(--white);
   border: none;

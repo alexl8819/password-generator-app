@@ -35,3 +35,9 @@
 .generation-form__submit:not(:disabled):hover .generation-form__submit-svg {
   filter: invert(88%) sepia(20%) saturate(836%) hue-rotate(65deg) brightness(108%) contrast(101%);
 }
+
+@media (prefers-color-scheme: light) {
+  .generation-form {
+    background-color: var(--grey);
+  }
+}

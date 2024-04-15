@@ -1,17 +1,21 @@
+import { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './Slider.module.css';
 
-export default function SliderDisplay ({ label, name, min, max, value, onChange }) {
+export default function Slider ({ label, name, min, max, value, onChange }) {
+  const rangeRef = useRef(null);
   const onValueChange = ({ target }) => {
-    const value = target.value;
-    /*const percentageUsed = '50%';/// Math.ceil();*/
-    // charLengthRef.current.style.background = `linear-gradient(to right, var(--lime-green), ${percentageUsed}, var(--black))`;
-    onChange(value);
-  }
+    const changedValue = target.value;
+    renderSliderProgress(rangeRef, changedValue, min, max);
+    onChange(changedValue);
+  };
+  useEffect(() => {
+    renderSliderProgress(rangeRef, value, min, max);
+  }, [min, max, value]);
   return (
     <div className={styles.slider}>
-      <input type="range" className={styles.sliderInput} name={name} min={min} max={max} value={value} step="1" onInput={onValueChange} />
+      <input type="range" ref={rangeRef} className={styles.sliderInput} name={name} min={min} max={max} value={value} step="1" onInput={onValueChange} />
       <div className={styles.sliderCharlengthLabel}>
         <label htmlFor={name} className={styles.sliderLabel}>{ label }</label>
         <p className={styles.sliderCharlengthValue}>{ value }</p>
@@ -20,7 +24,13 @@ export default function SliderDisplay ({ label, name, min, max, value, onChange 
   );
 }
 
-SliderDisplay.propTypes = {
+function renderSliderProgress (ref, currentValue, min, max) {
+  const current = Math.ceil((currentValue - min) / (max - min) * 100);
+  const total = 100 - current;
+  ref.current.style.background = current < 50 ? `linear-gradient(to left, var(--black) ${current}% ${total}%, var(--lime-green) ${total}%)` : `linear-gradient(to right, var(--lime-green) ${current}% ${total}%, var(--black) ${total}%)`;
+}
+
+Slider.propTypes = {
   label: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   min: PropTypes.number.isRequired,

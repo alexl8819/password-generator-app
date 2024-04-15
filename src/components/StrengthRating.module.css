@@ -82,3 +82,17 @@
     padding: 10px 25px;
   }
 }
+
+@media (prefers-color-scheme: light) {
+  .rating-block {
+    background-color: var(--white);
+  }
+
+  .rating-block__ratings {
+    color: var(--black);
+  }
+
+  .rating {
+    border: 1px solid var(--black);
+  }
+}

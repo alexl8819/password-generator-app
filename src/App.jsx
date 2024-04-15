@@ -36,12 +36,12 @@ function App() {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    setGeneratedPassword(create({
+    setGeneratedPassword(create(Object.freeze({
       includesLowercase: charFields.has(CHAR_FIELDS.Lowercase),
       includesUppercase: charFields.has(CHAR_FIELDS.Uppercase),
       includesNumbers: charFields.has(CHAR_FIELDS.Numbers),
       includesSymbols: charFields.has(CHAR_FIELDS.Symbols)
-    }, charLength));
+    }), charLength));
   };
 
   const formOptions = Object.freeze({

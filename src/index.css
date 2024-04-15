@@ -5,16 +5,7 @@
   src: local('JetBrains Mono Variable'), url('./assets/fonts/static/JetBrainsMono-VariableFont_wght.ttf') format('truetype');
 }
 
-body {
-  background-color: var(--black);
-}
-
-input, button {
-  font-family: inherit;
-}
-
-:root {
-  /*font-family: 'JetBrains Mono Bold', sans-serif;*/
+:root, :root.dark {
   font-family: 'JetBrains Mono Variable', monospace;
   font-weight: 400;
 
@@ -27,24 +18,24 @@ input, button {
   --orange: rgb(251, 124, 88);
   --yellow: rgb(248, 205, 101);
 
-  color-scheme: light dark;
-  /*color: rgba(255, 255, 255, 0.87);*/
-  /*background-color: var(--black);*/
+  --bg-color: var(--black);
+  /*color-scheme: light dark;*/
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-@media (prefers-color-scheme: dark) {
+input, button {
+  font-family: inherit;
+}
+
+body {
+  background-color: var(--bg-color);
+}
+
+@media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+    --bg-color: var(--white);
   }
 }

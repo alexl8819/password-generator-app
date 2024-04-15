@@ -21,11 +21,10 @@
   outline: none;
   cursor: pointer;
   margin: 0;
-  width: 1em;
-  height: 1em;
-  padding: 3px;
-  margin-right: 20px;
-  box-shadow: inset 1em 1em transparent;
+  width: 16px;
+  height: 16px;
+  margin-right: 15px;
+  box-shadow: inset 16px 16px transparent;
   border: 2px solid var(--white);
   display: grid;
   place-content: center;
@@ -41,19 +40,23 @@
 
 .option__checkbox::before {
   content: "";
-  width: 1em;
-  height: 1em;
-  padding: 3px;
-  box-shadow: inset 1em 1em transparent;
+  width: 16px;
+  height: 16px;
+  box-shadow: inset 16px 16px transparent;
   display: grid;
   place-content: center;
 }
 
 .option__checkbox:checked::before {
-  padding-top: 5px;
-  height: 15px;
+  width: 16px;
+  height: 16px;
   background-color: var(--lime-green);
   content: url('../assets/images/icon-check.svg');
+  box-shadow: inset 16px 16px transparent;
+  display: grid;
+  place-content: center;
+  transform: scale(0.8);
+  padding: 10px;
 }
 
 @media (width >= 640px) {

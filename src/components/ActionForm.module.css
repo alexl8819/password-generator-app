@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   background-color: var(--dark-grey);
-  padding: 15px;
+  padding: 10px 5px;
 }
 
 .generation-form__submit {
@@ -34,6 +34,12 @@
 
 .generation-form__submit:not(:disabled):hover .generation-form__submit-svg {
   filter: invert(88%) sepia(20%) saturate(836%) hue-rotate(65deg) brightness(108%) contrast(101%);
+}
+
+@media (width >= 640px) {
+  .generation-form {
+    padding: 15px;
+  }
 }
 
 @media (prefers-color-scheme: light) {

@@ -10,12 +10,12 @@ export default function create (flags, length) {
   let seq = '';
 
   do {
-    seq = generateSequence(length, `${flags.includesUppercase ? ALPHABET_UPPER : ''}${flags.includesLowercase ? ALPHABET_LOWER : ''}${flags.includesNumbers ? NUMBERS : ''}${flags.includesSymbols ? SYMBOLS : ''}`);
+    seq = generateSequence(length, `${flags.uppercase ? ALPHABET_UPPER : ''}${flags.lowercase ? ALPHABET_LOWER : ''}${flags.numbers ? NUMBERS : ''}${flags.symbols ? SYMBOLS : ''}`);
   } while (!validate(
-    flags.includesLowercase, 
-    flags.includesUppercase,
-    flags.includesNumbers,
-    flags.includesSymbols,
+    flags.lowercase, 
+    flags.uppercase,
+    flags.numbers,
+    flags.symbols,
     seq
   ));
   

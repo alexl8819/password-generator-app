@@ -37,10 +37,10 @@ function App() {
     e.preventDefault();
 
     setGeneratedPassword(create(Object.freeze({
-      includesLowercase: charFields.has(CHAR_FIELDS.Lowercase),
-      includesUppercase: charFields.has(CHAR_FIELDS.Uppercase),
-      includesNumbers: charFields.has(CHAR_FIELDS.Numbers),
-      includesSymbols: charFields.has(CHAR_FIELDS.Symbols)
+      lowercase: charFields.has(CHAR_FIELDS.Lowercase),
+      uppercase: charFields.has(CHAR_FIELDS.Uppercase),
+      numbers: charFields.has(CHAR_FIELDS.Numbers),
+      symbols: charFields.has(CHAR_FIELDS.Symbols)
     }), charLength));
   };
 

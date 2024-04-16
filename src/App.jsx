@@ -22,7 +22,7 @@ const CHAR_FIELDS = Object.freeze({
 
 function App() {
   const [generatedPassword, setGeneratedPassword] = useState('');
-  const [charLength, setCharLength] = useState(10);
+  const [charLength, setCharLength] = useState(6);
   const [charFields, setCharFields] = useState(new Set());
 
   const sendToClipboard = async () => {

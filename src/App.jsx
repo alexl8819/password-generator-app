@@ -125,7 +125,7 @@ function App() {
   const canGenerate = useMemo(() => charFields.size > 0, [charFields]);
 
   return (
-    <main className="app">
+    <div className="app">
       <div className="container">
         <Title text="Password Generator" />
         <div>
@@ -137,7 +137,7 @@ function App() {
         </div>
         <ToastContainer pauseOnFocusLoss={false} autoClose={5000} hideProgressBar />
       </div>
-    </main>
+    </div>
   );
 }
 

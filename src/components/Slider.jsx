@@ -7,11 +7,11 @@ export default function Slider ({ label, name, min, max, value, onChange }) {
   const rangeRef = useRef(null);
   const onValueChange = ({ target }) => {
     const changedValue = target.value;
-    renderSliderProgress(rangeRef, changedValue, min, max);
+    renderSliderProgress(rangeRef.current, changedValue, min, max);
     onChange(changedValue);
   };
   useEffect(() => {
-    renderSliderProgress(rangeRef, value, min, max);
+    renderSliderProgress(rangeRef.current, value, min, max);
   }, [min, max, value]);
   return (
     <div className={styles.slider}>
@@ -25,10 +25,10 @@ export default function Slider ({ label, name, min, max, value, onChange }) {
   );
 }
 
-function renderSliderProgress (ref, currentValue, min, max) {
+function renderSliderProgress (el, currentValue, min, max) {
   const current = Math.ceil((currentValue - min) / (max - min) * 100);
-  const total = 100 - current;
-  ref.current.style.background = current < 50 ? `linear-gradient(to left, var(--black) ${current}% ${total}%, var(--lime-green) ${total}%)` : `linear-gradient(to right, var(--lime-green) ${current}% ${total}%, var(--black) ${total}%)`;
+  const rem = 100 - current;
+  el.style.background = current < 50 ? `linear-gradient(to left, var(--black) ${current}% ${rem}%, var(--lime-green) ${rem}%)` : `linear-gradient(to right, var(--lime-green) ${current}% ${rem}%, var(--black) ${rem}%)`;
 }
 
 Slider.propTypes = {

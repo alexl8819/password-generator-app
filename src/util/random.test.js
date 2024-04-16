@@ -13,13 +13,14 @@ describe('Random sequence generator', () => {
   test('Should be uniform', () => {
     const COUNT = 100 * 1000;
     const LENGTH = 5;
-    const ALPHABET = 'abcdefghijklmnopqrstuvwxyz';
+    const ALPHABET = ALPHABET_LOWER + ALPHABET_UPPER;
 
-    let chars = { }
+    let chars = {};
+
     for (var i = 0; i < COUNT; i++) {
-      const id = generateSequence(LENGTH, ALPHABET);
-      for (var j = 0; j < id.length; j++) {
-        const char = id[j];
+      const seq = generateSequence(LENGTH, ALPHABET);
+      for (var j = 0; j < seq.length; j++) {
+        const char = seq[j];
         if (!chars[char]) {
           chars[char] = 0;
         }
@@ -27,7 +28,7 @@ describe('Random sequence generator', () => {
       }
     }
 
-    for (var k in chars) {
+    for (let k in chars) {
       const distribution = (chars[k] * ALPHABET.length) / (COUNT * LENGTH);
       expect(distribution).toBeCloseTo(1, 1);
     }

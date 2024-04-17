@@ -59,17 +59,13 @@ Users should be able to:
 
 ### What I learned
 
-Styling a consistent cross-browser range input is not easy. It took several attempts to get a consistent baseline styling, which is nothing more than a thumb and track to a default scheme. Many weird vendor prefixed styles were unfortunately used and while a CSS only solution was possible, the solutions found across the internet were less than impressive or overly complicated. Luckily enough, firefox does have the appropriate vendor prefix to style the track and thumb appropriately however it seemed browsers utilizing webkit were left to implement their own solution. Therefore I came up with an idea to dynamically style a `linear-gradient` background in JS as shown below:
+~~Styling a consistent cross-browser range input is not easy. It took several attempts to get a consistent baseline styling, which is nothing more than a thumb and track to a default scheme. Many weird vendor prefixed styles were unfortunately used and while a CSS only solution was possible, the solutions found across the internet were less than impressive or overly complicated. Luckily enough, firefox does have the appropriate vendor prefix to style the track and thumb appropriately however it seemed browsers utilizing webkit were left to implement their own solution. Therefore I came up with an idea to dynamically style a `linear-gradient` background in JS as shown below:~~
 
-```js
-function renderSliderProgress (el, currentValue, min, max) {
-  const current = Math.ceil((currentValue - min) / (max - min) * 100);
-  const rem = 100 - current;
-  el.style.background = current < 50 ? `linear-gradient(to left, var(--black) ${current}% ${rem}%, var(--lime-green) ${rem}%)` : `linear-gradient(to right, var(--lime-green) ${current}% ${rem}%, var(--black) ${rem}%)`;
-}
+Updated solution using CSS only:
+
+```css
+background: linear-gradient(to right, var(--lime-green) calc(calc(var(--range) - var(--offset)) / var(--max) * 100%), var(--black) calc(calc(var(--range) - var(--offset)) / var(--max) * 100%));
 ```
-
-Function is called when the component is loaded initially once and only updated whenever any of the props `currentValue`, `min`, `max` are updated. The `current` value (the foreground color) is calculated based on the value selected minus the offset (`min` value) divided by the `max` value minus the offset multipled by 100 and then rounded to the next highest number. Afterwards, we subtract the current value from 100 to get the `rem` value, which will render the remaining portion of the gradient (the background color). Gradient direction also changes from right to left when the current value is less than 50%, which may not be necessary as I'm still learning about gradients and will likely need to be refactored in the future. It works as intended on webkit flavored browsers (tested in Brave and Edge as of this writing), while firefox uses the existing prefixed styling.
 
 ### Continued development
 

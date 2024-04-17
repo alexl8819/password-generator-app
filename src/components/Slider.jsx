@@ -1,34 +1,20 @@
-import { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './Slider.module.css';
 
 export default function Slider ({ label, name, min, max, value, onValueChange }) {
-  const rangeRef = useRef(null);
-  const onLocalChange = ({ target }) => {
-    const changedValue = target.value;
-    renderSliderProgress(rangeRef.current, changedValue, min, max);
-    onValueChange(changedValue);
-  };
-  useEffect(() => {
-    renderSliderProgress(rangeRef.current, value, min, max);
-  }, [min, max, value]);
+  const calculatedRange = { '--range': value, '--offset': min, '--max': max };
+  const onLocalChange = ({ target }) => onValueChange(target.value);
   return (
     <div className={styles.slider}>
       <label htmlFor={name} className={styles.sliderLabelHidden}>{ label }</label>
-      <input type="range" ref={rangeRef} className={styles.sliderInput} id={name} name={name} min={min} max={max} value={value} step="1" onInput={onLocalChange} />
+      <input type="range" className={styles.sliderInput} style={calculatedRange} id={name} name={name} min={min} max={max} value={value} step="1" onInput={onLocalChange} />
       <div className={styles.sliderCharlengthLabel}>
         <p className={styles.sliderLabel}>{ label }</p>
         <p className={styles.sliderCharlengthValue}>{ value }</p>
       </div>
     </div>
   );
-}
-
-function renderSliderProgress (el, currentValue, min, max) {
-  const current = Math.ceil((currentValue - min) / (max - min) * 100);
-  const rem = 100 - current;
-  el.style.background = current < 50 ? `linear-gradient(to left, var(--black) ${current}% ${rem}%, var(--lime-green) ${rem}%)` : `linear-gradient(to right, var(--lime-green) ${current}% ${rem}%, var(--black) ${rem}%)`;
 }
 
 Slider.propTypes = {

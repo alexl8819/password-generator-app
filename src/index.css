@@ -19,7 +19,7 @@
   --yellow: rgb(248, 205, 101);
 
   --bg-color: var(--black);
-  /*color-scheme: light dark;*/
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;

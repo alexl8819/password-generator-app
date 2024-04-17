@@ -106,4 +106,15 @@
   .slider__charlength-value {
     font-size: 1.75rem;
   }
+
+  .slider__input::-moz-range-thumb {
+    height: 28px;
+    width: 28px;
+  }
+
+  .slider__input::-webkit-slider-thumb {
+    margin-top: -10px;
+    height: 28px;
+    width: 28px;
+  }
 }

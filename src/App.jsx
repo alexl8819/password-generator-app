@@ -35,12 +35,20 @@ function App() {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    setGeneratedPassword(create(Object.freeze({
-      lowercase: charFields.has(CHAR_FIELDS.Lowercase),
-      uppercase: charFields.has(CHAR_FIELDS.Uppercase),
-      numbers: charFields.has(CHAR_FIELDS.Numbers),
-      symbols: charFields.has(CHAR_FIELDS.Symbols)
-    }), charLength));
+    let generated = '';
+
+    try {
+      generated = create(Object.freeze({
+        lowercase: charFields.has(CHAR_FIELDS.Lowercase),
+        uppercase: charFields.has(CHAR_FIELDS.Uppercase),
+        numbers: charFields.has(CHAR_FIELDS.Numbers),
+        symbols: charFields.has(CHAR_FIELDS.Symbols)
+      }), charLength);
+    } catch (err) {
+      toast.error(err.message);
+    }
+    
+    setGeneratedPassword(generated);
   };
 
   const formOptions = Object.freeze({

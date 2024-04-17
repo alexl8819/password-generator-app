@@ -121,7 +121,7 @@ function App() {
   });
 
   const calculateRating = useMemo(() => calculateNumeric(charFields), [charFields]);
-  const canGenerate = useMemo(() => charLength > 0 && charFields.size > 0, [charLength, charFields]);
+  const canGenerate = useMemo(() => charLength >= charFields.size && charFields.size > 0, [charLength, charFields]);
 
   return (
     <div className="app">

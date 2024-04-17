@@ -29,10 +29,7 @@ Users should be able to:
 
 ### (NEW) Deviations
 
-- 6 characters minimum as advised by NIST instead of a single character
 - Color scheme is based on OS instead of only dark mode by the design
-- Passwords are validated for correctness, while it should generate included characters sets per generation, it will continually regenerate
-if it fails to include all necessary characters.
 
 ### Screenshot
 

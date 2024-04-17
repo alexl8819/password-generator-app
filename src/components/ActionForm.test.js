@@ -12,7 +12,7 @@ const formOptions = {
     min: 10,
     max: 20,
     currentValue: 10,
-    onValueChange: (value) => {}
+    onValueChange: () => {}
   },
   includes: [
     {

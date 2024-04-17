@@ -5,7 +5,6 @@ import copy from 'clipboard-copy';
 import Title from './components/Title';
 import StrengthRating from './components/StrengthRating';
 import PasswordBar from './components/PasswordBar';
-import PasswordOptions from './components/PasswordOptions';
 import PasswordGenerationForm from './components/ActionForm';
 
 import { calculateNumeric } from './util/rating';
@@ -51,7 +50,7 @@ function App() {
       min: 6,
       max: 20,
       currentValue: charLength,
-      onChange: (value) => setCharLength(value)
+      onValueChange: (value) => setCharLength(value)
     },
     includes: [
       {
@@ -130,8 +129,7 @@ function App() {
         <Title text="Password Generator" />
         <div>
           <PasswordBar passwordCopy={generatedPassword} onCopy={sendToClipboard} />
-          <PasswordGenerationForm onSubmit={onSubmit} canGenerate={canGenerate}>
-            <PasswordOptions options={formOptions} />
+          <PasswordGenerationForm formOptions={formOptions} canGenerate={canGenerate} onSubmit={onSubmit}>
             <StrengthRating rating={calculateRating} />
           </PasswordGenerationForm>
         </div>

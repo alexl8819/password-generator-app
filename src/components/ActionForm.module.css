@@ -5,6 +5,14 @@
   padding: 10px 5px;
 }
 
+.generation-form__options {
+  margin: 0 15px 15px;
+}
+
+.generation-form__options-includes {
+  margin-top: 35px;
+}
+
 .generation-form__submit {
   text-align: center;
   color: var(--black);

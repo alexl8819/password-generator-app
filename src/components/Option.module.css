@@ -21,10 +21,10 @@
   outline: none;
   cursor: pointer;
   margin: 0;
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   margin-right: 15px;
-  box-shadow: inset 16px 16px transparent;
+  box-shadow: inset 18px 18px transparent;
   border: 2px solid var(--white);
   display: grid;
   place-content: center;
@@ -40,27 +40,27 @@
 
 .option__checkbox::before {
   content: "";
-  width: 16px;
-  height: 16px;
-  box-shadow: inset 16px 16px transparent;
+  width: 18px;
+  height: 18px;
+  box-shadow: inset 18px 18px transparent;
   display: grid;
   place-content: center;
 }
 
 .option__checkbox:checked::before {
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   background-color: var(--lime-green);
   content: url('../assets/images/icon-check.svg');
-  box-shadow: inset 16px 16px transparent;
+  box-shadow: inset 18px 18px transparent;
   display: grid;
   place-content: center;
-  transform: scale(0.8);
-  padding: 10px;
+  transform: scale(0.75);
+  padding: 12px;
 }
 
 @media (width >= 640px) {
   .option__label {
-    font-size: 1rem;
+    font-size: 1.125rem;
   }
 }

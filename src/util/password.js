@@ -6,11 +6,18 @@ import {
   generateSequence 
 } from './random';
 
+const MAX_ATTEMPTS = 1000;
+
 export default function create (flags, length) {
   let seq = '';
+  let attempts = 0;
 
   do {
+    if (attempts >= MAX_ATTEMPTS) {
+      throw new Error('Creation exceeded attempt maximum');
+    }
     seq = generateSequence(length, `${flags.uppercase ? ALPHABET_UPPER : ''}${flags.lowercase ? ALPHABET_LOWER : ''}${flags.numbers ? NUMBERS : ''}${flags.symbols ? SYMBOLS : ''}`);
+    attempts++;
   } while (!validate(
     flags.lowercase, 
     flags.uppercase,

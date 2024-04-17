@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 
 import styles from './Slider.module.css';
 
-export default function Slider ({ label, name, min, max, value, onChange }) {
+export default function Slider ({ label, name, min, max, value, onValueChange }) {
   const rangeRef = useRef(null);
-  const onValueChange = ({ target }) => {
+  const onLocalChange = ({ target }) => {
     const changedValue = target.value;
     renderSliderProgress(rangeRef.current, changedValue, min, max);
-    onChange(changedValue);
+    onValueChange(changedValue);
   };
   useEffect(() => {
     renderSliderProgress(rangeRef.current, value, min, max);
@@ -16,7 +16,7 @@ export default function Slider ({ label, name, min, max, value, onChange }) {
   return (
     <div className={styles.slider}>
       <label htmlFor={name} className={styles.sliderLabelHidden}>{ label }</label>
-      <input type="range" ref={rangeRef} className={styles.sliderInput} id={name} name={name} min={min} max={max} value={value} step="1" onInput={onValueChange} />
+      <input type="range" ref={rangeRef} className={styles.sliderInput} id={name} name={name} min={min} max={max} value={value} step="1" onInput={onLocalChange} />
       <div className={styles.sliderCharlengthLabel}>
         <p className={styles.sliderLabel}>{ label }</p>
         <p className={styles.sliderCharlengthValue}>{ value }</p>
@@ -40,5 +40,5 @@ Slider.propTypes = {
     PropTypes.string,
     PropTypes.number
   ]).isRequired,
-  onChange: PropTypes.func.isRequired
+  onValueChange: PropTypes.func.isRequired
 };

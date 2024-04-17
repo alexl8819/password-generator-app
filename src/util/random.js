@@ -10,6 +10,10 @@ export function generateSequence (limit, charset) {
   if (!charset.length) {
     throw new Error('charset must be greater than zero');
   }
+
+  if (limit <= 0) {
+    throw new RangeError('limit must be greater than zero');
+  }
   
   const buf = new Uint32Array(limit);
   webcrypto.getRandomValues(buf);

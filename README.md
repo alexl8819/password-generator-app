@@ -36,7 +36,8 @@ if it fails to include all necessary characters.
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![Mobile Screenshot](./screenshots/mobile.png)
+![Desktop Screenshot](./screenshots/desktop.png)
 
 ### Links
 

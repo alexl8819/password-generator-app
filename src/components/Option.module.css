@@ -1,7 +1,7 @@
 .option {
   display: flex;
   flex-direction: row;
-  margin: 20px 0;
+  margin: 22px 0;
 }
 
 .option__label {

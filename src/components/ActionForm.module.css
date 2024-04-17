@@ -27,6 +27,7 @@
 
 .generation-form__submit:disabled {
   cursor: not-allowed;
+  background-color: var(--grey);
 }
 
 .generation-form__submit:not(:disabled):hover {
@@ -53,5 +54,14 @@
 @media (prefers-color-scheme: light) {
   .generation-form {
     background-color: var(--grey);
+  }
+
+  .generation-form__submit:disabled {
+    color: var(--white);
+    background-color: var(--dark-grey);
+  }
+
+  .generation-form__submit:disabled .generation-form__submit-svg {
+    filter: brightness(0) saturate(100%) invert(77%) sepia(1%) saturate(1147%) hue-rotate(212deg) brightness(114%) contrast(107%);
   }
 }

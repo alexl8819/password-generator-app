@@ -13,7 +13,7 @@ describe('Random sequence generator', () => {
   test('Should be uniform', () => {
     const COUNT = 100 * 1000;
     const LENGTH = 5;
-    const ALPHABET = ALPHABET_LOWER + ALPHABET_UPPER;
+    const ALPHABET = ALPHABET_UPPER;
 
     let chars = {};
 

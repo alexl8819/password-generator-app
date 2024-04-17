@@ -21,7 +21,7 @@ const CHAR_FIELDS = Object.freeze({
 
 function App() {
   const [generatedPassword, setGeneratedPassword] = useState('');
-  const [charLength, setCharLength] = useState(6);
+  const [charLength, setCharLength] = useState(0);
   const [charFields, setCharFields] = useState(new Set());
 
   const sendToClipboard = async () => {
@@ -47,7 +47,7 @@ function App() {
     charLength: {
       label: 'Character Length',
       name: 'charlength',
-      min: 6,
+      min: 0,
       max: 20,
       currentValue: charLength,
       onValueChange: (value) => setCharLength(value)
@@ -121,7 +121,7 @@ function App() {
   });
 
   const calculateRating = useMemo(() => calculateNumeric(charFields), [charFields]);
-  const canGenerate = useMemo(() => charFields.size > 0, [charFields]);
+  const canGenerate = useMemo(() => charLength > 0 && charFields.size > 0, [charLength, charFields]);
 
   return (
     <div className="app">

@@ -30,7 +30,6 @@ Users should be able to:
 ### (NEW) Deviations
 
 - 6 characters minimum as advised by NIST instead of a single character
-- ---Special characters used (not recommended anymore) can be changed by double clicking the option---
 - Color scheme is based on OS instead of only dark mode by the design
 - Passwords are validated for correctness, while it should generate included characters sets per generation, it will continually regenerate
 if it fails to include all necessary characters.
@@ -41,7 +40,7 @@ if it fails to include all necessary characters.
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [Password Generator App Solution](https://www.frontendmentor.io/solutions/password-generator-app-kmHbIAQjUw)
 - Live Site URL: [Password Generator App](https://alexl8819.github.io/password-generator-app/)
 
 ## My process

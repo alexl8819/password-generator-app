@@ -27,7 +27,7 @@
 
 .rating-block__ratings::before {
   margin-right: 8px;
-  font-size: 1.05rem;
+  font-size: 1.125rem;
   font-weight: 700;
 }
 
@@ -49,15 +49,15 @@
 
 .rating {
   border: 2px solid var(--white);
-  width: 8px;
-  height: 24px;
+  width: 10px;
+  height: 28px;
   margin-left: 3px;
   margin-right: 3px;
 }
 
 .rating--veryweak, .rating--weak, .rating--medium, .rating--strong {
-  width: 8px;
-  height: 24px;
+  width: 10px;
+  height: 28px;
   border: none;
 }
 
@@ -79,7 +79,15 @@
 
 @media (width >= 640px) {
   .rating-block {
-    padding: 5px 25px;
+    padding: 8px 25px;
+  }
+
+  .rating-block__strengthtext {
+    font-size: 1.125rem;
+  }
+
+  .rating-block__ratings::before {
+    font-size: 1.5rem;
   }
 }
 

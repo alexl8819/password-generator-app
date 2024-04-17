@@ -7,7 +7,7 @@
 
 .option__label {
   color: var(--white);
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-weight: 700;
 }
 
@@ -23,7 +23,7 @@
   margin: 0;
   width: 20px;
   height: 20px;
-  margin-right: 20px;
+  margin-right: 16px;
   box-shadow: inset 20px 20px transparent;
   border: 2px solid var(--white);
   display: grid;
@@ -62,5 +62,9 @@
 @media (width >= 640px) {
   .option__label {
     font-size: 1.125rem;
+  }
+
+  .option__checkbox {
+    margin-right: 20px;
   }
 }

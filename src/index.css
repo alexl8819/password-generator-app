@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: 'JetBrains Mono Variable', monospace;
-  src: local('JetBrains Mono Variable'), url('./assets/fonts/static/JetBrainsMono-VariableFont_wght.ttf') format('truetype');
+  src: url('./assets/fonts/JetBrainsMono-VariableFont_wght.ttf') format('truetype');
 }
 
 :root, :root.dark {

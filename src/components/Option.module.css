@@ -54,7 +54,7 @@
   box-shadow: inset 20px 20px transparent;
   display: grid;
   place-content: center;
-  transform: scale(0.75);
+  transform: scale(0.8);
   padding: 12px;
 }
 
